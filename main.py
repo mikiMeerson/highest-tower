@@ -77,15 +77,13 @@ def recover_tower(i, boxes):
         print(" --> Box {}".format(i + 1), end="")
 
 
-if __name__ == '__main__':
-    size = 20
-    H = [-1] * size
-    P = [None] * size
+def main_tower(size):
+    print("Generating {} boxes:".format(size))
     height, length, width = generate_dimensions(size)
     boxes = create_boxes(height, width, length)
 
     # Show available boxes, sorted
-    print("Printing boxes in sorted order (primary + secondary)...")
+    print("\nPrinting boxes in sorted order (primary + secondary)...")
     for i in range(size):
         print("Box {}:".format(i + 1))
         boxes[i].print()
@@ -95,3 +93,12 @@ if __name__ == '__main__':
     print("\nRecovering Highest possible tower...")
     recover_tower(max_i, boxes)
     print("\nWith the height of {}".format(max_height))
+
+
+if __name__ == '__main__':
+    sizes = [20, 30]
+    for size in sizes:
+        H = [-1] * size
+        P = [None] * size
+        main_tower(size)
+        print('************************************************************')
