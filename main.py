@@ -1,4 +1,5 @@
-from operator import attrgetter
+# מיקי מאירסון 207349010
+# נעם תשובה 207576109
 import random
 
 H = []  # Max height array
